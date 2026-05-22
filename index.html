@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修修图 - 在线图片压缩 | 免费无损压缩 | 不传服务器 | 保护隐私</title>
+    <meta name="description" content="修修图·在线图片压缩工具，所有处理在你的浏览器本地完成，图片不会上传到任何服务器。支持JPG/PNG/WebP格式压缩，拖拽即可使用，完全免费。">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 品牌标题区（含图片） -->
+        <div class="brand-area">
+            <div class="brand-row">
+                <img src="compressed_1779472927613.jpg" alt="修修图" class="brand-logo">
+                <h1 class="brand-title">
+                    <span class="brand-name">修修图</span>
+                    <span class="brand-divider">·</span>
+                    <span class="brand-desc">在线图片压缩</span>
+                </h1>
+            </div>
+            <p class="brand-tagline">本地处理，隐私无忧</p>
+        </div>
+
+        <!-- 隐私安全徽章 -->
+        <div class="privacy-badge">
+            <span class="privacy-icon shield">🛡️</span>
+            <span class="privacy-text">数据本地处理</span>
+            <span class="privacy-divider">|</span>
+            <span class="privacy-icon cloud-off">☁️🚫</span>
+            <span class="privacy-text">不上传服务器</span>
+        </div>
+        
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <div class="upload-content">
+                <div class="upload-icon-wrapper">
+                    <svg class="upload-icon" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                </div>
+                <p class="upload-text">拖拽图片到此处，或<span class="upload-link">点击上传</span></p>
+                <p class="upload-hint">支持 JPG / PNG / WebP</p>
+            </div>
+        </div>
+
+        <!-- 压缩控制区 -->
+        <div class="controls" id="controls" style="display: none;">
+            <div class="quality-control">
+                <div class="quality-labels">
+                    <span>📉 小文件</span>
+                    <label for="qualityRange">压缩质量 <span id="qualityValue">80</span>%</label>
+                    <span>📈 高画质</span>
+                </div>
+                <input type="range" id="qualityRange" min="10" max="100" value="80">
+            </div>
+            
+            <!-- 预览对比区 -->
+            <div class="preview-container">
+                <div class="preview-card">
+                    <div class="preview-header">
+                        <span class="preview-badge">原图</span>
+                    </div>
+                    <div class="preview-img-wrapper">
+                        <img id="originalImage" alt="原图预览">
+                    </div>
+                    <p class="preview-size" id="originalSize"></p>
+                </div>
+                
+                <div class="preview-arrow">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </div>
+                
+                <div class="preview-card compressed-card">
+                    <div class="preview-header">
+                        <span class="preview-badge highlight">压缩后</span>
+                    </div>
+                    <div class="preview-img-wrapper">
+                        <img id="compressedImage" alt="压缩后预览">
+                    </div>
+                    <p class="preview-size" id="compressedSize"></p>
+                </div>
+            </div>
+
+            <!-- 下载按钮 -->
+            <button id="downloadBtn" class="download-button">
+                <span class="button-text">下载压缩图片</span>
+                <svg class="button-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 底部版权与安全声明 -->
+        <p class="footer-note">© 2025 修修图 | 图片处理全程在浏览器本地完成，不会上传至任何服务器</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
